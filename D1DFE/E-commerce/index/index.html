@@ -10,8 +10,8 @@
   <h1>Meus pedidos</h1>
   <ul>
     <li><a href="#section1">Meus dados</a></li>
-    <li>Minhas compras</li>
-    <li>Avaliar produto</li>
+    <li><a href="#section2">Minhas compras</a></li>
+    <li><a href="#section3">Avaliar produto</a></li>
   </ul>
   <section id="section1">
     <h2>Meus dados</h2>
@@ -40,6 +40,95 @@
   <section id="section2">
     <h2>Minhas compras</h2>
     <fieldset>
+      <table>
+        <tr>
+          <td>Número do pedido</td>
+          <td>Status</td>
+          <td>Data</td>
+          <td>Forma de pagamento</td>
+          <td>Acompanhamento</td>
+        </tr>
+        <tr>
+          <td>#37945982</td>
+          <td>Concluído</td>
+          <td>12/12/2020</td>
+          <td>Cartão de crédito</td>
+          <td><button id="tracking"><a href="#sectionTrack">Rastreio detalhado</a></button></td>
+        </tr>
+      </table>
+    </fieldset>
+    <br>
+    <fieldset>
+      <table>
+        <tr>
+          <td><img src="/D1DFE/E-commerce/img/suporte_articulado.jpg" alt="imagem do produto" width="100" height="70"></td>
+          <td><h2>Suporte articulado p/ Monitor e Notebook de 13 a 22 Vinik, Articulação Dupla - SMN500</h2><br>Quantidade: 1<br><a href="#section3">Avaliar produto</a></td>
+          <td>R$ 99,90</td>
+        </tr>
+      </table>
+    </fieldset>
+    <br>
+    <details>
+      <summary>Detalhes do pagamento</summary>
+      <table>
+        <tr>
+          <th><h2>Endereço de Entrega</h2></th>
+          <th><h2>Forma de pagamento</h2></th>
+          <th><h2>Frete</h2></th>
+        </tr>
+        <tr>
+          <td>Avenida Estelita falcão<br>
+          Número 12, Centro<br>
+          CEP 48170-970 - Água Fria/BA 
+          </td>
+          <td>Cartão de crédito<br>
+            Mastercard **** **** **** 1234<br>
+            Titular: João da Silva
+          </td>
+          <td>R$ 15,52<br>
+            Enviado por: <strong>GFL</strong><br>
+            Entregue
+          </td>
+        </tr>
+      </table>
+    </details>
+  </section>
+  <section id="sectionTrack" class="modal">
+    <div class="modal-content">
+      <h1>Rastreio detalhado</h1>
+      <p>Seu pedido foi entregue com sucesso!<br>
+      Entregue por: GFL<br>
+      Código de rastreio: 123456789<br>
+      Entregue em 12/12/2020<br>
+      </p>
+      <a href="#section2" class="fechar">Fechar</a>
+    </div>
+  </section>
+  <br>
+  <section id="section3" class="rating">
+    <h2>Avaliação do Produto</h2>
+    <fieldset>
+      <legend>Opinião sobre o produto</legend>
+        <br>
+        <label><strong>Qual cor do produto mais te agrada?</strong></label><br>
+        <input type="color" id="corproduto" value="#0000ff">
+        <br>
+        <form>
+          <strong>O produto é de qualidade?</strong><br>
+        <input type="radio"><label for="option1">Concordo totalmente</label><br>
+        <input type="radio"><label for="option2">Concordo</label><br>
+        <input type="radio"><label for="option3">Não estou decidido</label><br>
+        <input type="radio"><label for="option4">Discordo</label><br>
+        <input type="radio"><label for="option5">Discordo totalmente</label><br><br>
+        </form>
+        <form>
+          <strong>Para você, quais parâmetros são mais importantes na qualidade do produto?</strong><br>
+        <input type="radio"><label>Concordo totalmente</label><br>
+        <input type="radio"><label>Concordo</label><br>
+        <input type="radio"><label>Não estou decidido</label><br>
+        <input type="radio"><label>Discordo</label><br>
+        <input type="radio"><label>Discordo totalmente</label><br><br>
+        </form>
     </fieldset>
   </section>
 </body>

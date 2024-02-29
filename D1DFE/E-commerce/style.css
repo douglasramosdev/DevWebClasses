@@ -1,3 +1,40 @@
 body{
   font-family: Arial;
 }
+table{
+  border-collapse: separate;
+  border-spacing: 10px;
+}
+td{
+  border:none;
+  padding: 5px;
+}
+.modal{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0);
+}
+
+.modal:target{
+  display: block;
+}
+
+.modal-content{
+  background-color: #fefefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 3px solid black;
+  width: 40%;
+}
+
+.fechar{
+  margin: 15% auto;
+  padding: 5px;
+  border: .5px solid black;
+}
