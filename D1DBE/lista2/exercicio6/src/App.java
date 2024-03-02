@@ -4,15 +4,13 @@ import java.util.regex.Pattern;
 class ValidadorCPF {
 
     public static boolean validaCPF(String cpf) {
-        // Remove caracteres não numéricos
+
         cpf = cpf.replaceAll("\\D+", "");
 
-        // Verifica se o CPF tem 11 dígitos e não são todos iguais
         if (!cpf.matches("\\d{11}") || cpf.matches(cpf.charAt(0) + "{11}")) {
             return false;
         }
 
-        // Calcula e verifica o primeiro dígito verificador
         int soma = 0;
         for (int i = 0; i < 9; i++) {
             soma += Character.getNumericValue(cpf.charAt(i)) * (10 - i);
@@ -23,7 +21,6 @@ class ValidadorCPF {
             return false;
         }
 
-        // Calcula e verifica o segundo dígito verificador
         soma = 0;
         for (int i = 0; i < 10; i++) {
             soma += Character.getNumericValue(cpf.charAt(i)) * (11 - i);
