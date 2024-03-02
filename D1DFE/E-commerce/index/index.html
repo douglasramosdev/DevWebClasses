@@ -111,25 +111,48 @@
       <legend>Opinião sobre o produto</legend>
         <br>
         <label><strong>Qual cor do produto mais te agrada?</strong></label><br>
-        <input type="color" id="corproduto" value="#0000ff">
+        <input type="color" list="cores" id="escolhacor"/>
+        <datalist id="escolhacor">
+          <option value="#000000"></option>
+          <option value="#ff0000"></option>
+          <option value="#0000ff"></option>
+          <option value="#00ff00"></option>
+          <option value="#f0f000"></option>
+          <option value="#000f0f"></option>
+          <option value="#00fff0"></option>
+        </datalist>
+        <br>
         <br>
         <form>
           <strong>O produto é de qualidade?</strong><br>
-        <input type="radio"><label for="option1">Concordo totalmente</label><br>
-        <input type="radio"><label for="option2">Concordo</label><br>
-        <input type="radio"><label for="option3">Não estou decidido</label><br>
-        <input type="radio"><label for="option4">Discordo</label><br>
-        <input type="radio"><label for="option5">Discordo totalmente</label><br><br>
+        <input type="radio" name="option"><label>Concordo totalmente</label><br>
+        <input type="radio" name="option"><label>Concordo</label><br>
+        <input type="radio" name="option"><label>Não estou decidido</label><br>
+        <input type="radio" name="option"><label>Discordo</label><br>
+        <input type="radio" name="option"><label>Discordo totalmente</label><br><br>
         </form>
         <form>
           <strong>Para você, quais parâmetros são mais importantes na qualidade do produto?</strong><br>
-        <input type="radio"><label>Concordo totalmente</label><br>
-        <input type="radio"><label>Concordo</label><br>
-        <input type="radio"><label>Não estou decidido</label><br>
-        <input type="radio"><label>Discordo</label><br>
-        <input type="radio"><label>Discordo totalmente</label><br><br>
+        <input type="radio" name="option2"><label>Concordo totalmente</label><br>
+        <input type="radio" name="option2"><label>Concordo</label><br>
+        <input type="radio" name="option2"><label>Não estou decidido</label><br>
+        <input type="radio" name="option2"><label>Discordo</label><br>
+        <input type="radio" name="option2"><label>Discordo totalmente</label><br><br>
         </form>
+        <br>
+        <strong>Descreva a característica que mais chamou sua atenção: </strong><br>
+        <input type="text"><br><br>
     </fieldset>
+    <fieldset>
+      <legend>Condições</legend>
+      <strong>Adicione uma foto atual do produto</strong><br>
+      <input type="file"><br><br>
+      <strong>Data de compra</strong><br>
+      <input type="date"><br><br>
+      <strong>Deixe um comentário sobre as condições do produto</strong><br>
+      <textarea></textarea><br><br>
+    </fieldset>
+    <input type="submit" id="submitRating" value="Enviar avaliação">
   </section>
 </body>
 </html>
