@@ -55,7 +55,7 @@ class CalculadoraFormasDinamica {
     }
 
     private static double calcularQuadrado(double lado1, double lado2) {
-        return lado1 * lado2; // Note que isso realmente calcula a área de um retângulo
+        return lado1 * lado2;
     }
 
     private static double calcularPerimetroTriangulo(int lado1, int lado2, int lado3) {
