@@ -20,14 +20,15 @@ public class mysqlconnection {
       System.out.println("Error on connect:" + error.getMessage());
     }
   }
-  public void CloseDatabase() throws SQLException{
+  public void CloseDatabase() throws SQLException {
     sqlupdt.close();
     dbConn.close();
   }
-  public int QueryExec(String sql){
-    try{
+  public int QueryExec(String sql) {
+    try {
       return sqlupdt.executeUpdate(sql);
-    } catch (Exception Error){
+    }
+    catch (Exception Error){
       System.out.println(Error.getMessage());
     }
     return -1;
