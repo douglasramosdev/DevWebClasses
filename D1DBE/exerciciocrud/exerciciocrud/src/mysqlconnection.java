@@ -6,25 +6,27 @@ public class mysqlconnection {
   public static String PWD = "0000" ;
 
   private Connection dbConn = null;
-  private Statement sqlmgr = null;
-  private ResultSet resultSql = null;
+  private Statement sqlupdt = null;
+  private ResultSet sqlslct = null;
 
-  public void OpenDatabase (){
+  public void OpenDatabase () {
     try {
       dbConn = DriverManager.getConnection(URL, USER, PWD);
-    System.out.println("Conectado ao BD com Sucesso!!" + URL);
-    sqlmgr = dbConn.createStatement();
-    } catch(Exception error){
+      System.out.println("Conectado ao BD com Sucesso!!" + URL);
+      sqlupdt = dbConn.createStatement();
+    }
+
+    catch(Exception error) {
       System.out.println("Error on connect:" + error.getMessage());
     }
   }
   public void CloseDatabase() throws SQLException{
-    sqlmgr.close();
+    sqlupdt.close();
     dbConn.close();
   }
   public int QueryExec(String sql){
     try{
-      return sqlmgr.executeUpdate(sql);
+      return sqlupdt.executeUpdate(sql);
     } catch (Exception Error){
       System.out.println(Error.getMessage());
     }
