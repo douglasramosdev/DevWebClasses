@@ -1,3 +1,4 @@
+
 import java.sql.*;
 
 public class mysqlconnection {
@@ -33,4 +34,7 @@ public class mysqlconnection {
     }
     return -1;
   }
+  public PreparedStatement getPreparedStatement(String sql) throws SQLException {
+    return dbConn.prepareStatement(sql);
+}
 }

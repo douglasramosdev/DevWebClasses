@@ -1,14 +1,25 @@
-import java.util.Scanner;
-import java.sql.SQLException;
+import escola.*;
+import java.sql.*;
 
 public class crud {
     public static void main(String[] args) throws Exception {
-        mysqlconnection crud = new mysqlconnection();
-        //String sql = "CREATE TABLE teste" + "(id_cidade INT NOT NULL PRIMARY KEY AUTO_INCREMENT," + "nome VARCHAR(200))";
-        crud.OpenDatabase();
-        //crud.QueryExec(sql);
-        String sql = "INSERT INTO teste" + "(nome) VALUES ('New York')";
-        crud.QueryExec(sql);
-        crud.CloseDatabase();
+        mysqlconnection conn = new mysqlconnection();
+        String sql = "INSERT INTO aluno(nome, idade, endereco, datamatricula) VALUES (?,?,?,?)";
+        try {
+            conn.OpenDatabase();
+            PreparedStatement prepstat = conn.getPreparedStatement(sql);
+
+            prepstat.setString(1, "João Silva");
+            prepstat.setInt(2, 20);
+            prepstat.setString(3, "Rua Exemplo, 123");
+            prepstat.setDate(4, new java.sql.Date(System.currentTimeMillis())); // Data atual como exemplo
+
+            int rowsAffected = prepstat.executeUpdate();
+            System.out.println(rowsAffected + " linha(s) inserida(s).");
+
+            conn.CloseDatabase();
+        } catch (Exception e) {
+            System.out.println("Erro durante a execução: " + e.getMessage());
+        }
     }
 }
