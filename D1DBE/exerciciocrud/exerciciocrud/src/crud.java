@@ -17,7 +17,7 @@ public class crud {
             System.out.println("0. Sair");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
             switch (opcao) {
                 case 1:
@@ -47,7 +47,7 @@ public class crud {
         System.out.println("4. Deletar Aluno");
         System.out.print("Escolha uma opção: ");
         int opcao = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); 
 
         switch (opcao) {
             case 1:
@@ -73,7 +73,7 @@ public class crud {
         String nome = scanner.nextLine();
         System.out.print("Idade do aluno: ");
         int idade = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); 
         System.out.print("Endereço do aluno: ");
         String endereco = scanner.nextLine();
         System.out.print("Data de matrícula (AAAA-MM-DD): ");
@@ -86,7 +86,7 @@ public class crud {
             prepStat.setString(1, nome);
             prepStat.setInt(2, idade);
             prepStat.setString(3, endereco);
-            prepStat.setDate(4, Date.valueOf(dataMatricula)); // Convertendo string para java.sql.Date
+            prepStat.setDate(4, Date.valueOf(dataMatricula));
 
             int rowsAffected = prepStat.executeUpdate();
             System.out.println(rowsAffected + " linha(s) inserida(s).");
@@ -130,14 +130,14 @@ public class crud {
     private static void atualizarAluno() {
         System.out.print("Informe o RA do aluno a ser atualizado: ");
         int ra = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine();
         
         System.out.print("Novo nome do aluno: ");
         String nome = scanner.nextLine();
         
         System.out.print("Nova idade do aluno: ");
         int idade = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine();
         
         System.out.print("Novo endereço do aluno: ");
         String endereco = scanner.nextLine();
@@ -171,7 +171,7 @@ public class crud {
     private static void deletarAluno() {
         System.out.print("Informe o RA do aluno a ser excluído: ");
         int ra = scanner.nextInt();
-        scanner.nextLine(); // Consume newline after the number
+        scanner.nextLine();
     
         String sql = "DELETE FROM alunos WHERE ra = ?";
         try {
@@ -206,7 +206,7 @@ public class crud {
             System.out.println("5. Voltar ao Menu Principal");
             System.out.print("Escolha uma opção: ");
             int opcao = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine(); 
     
             switch (opcao) {
                 case 1:
@@ -222,7 +222,7 @@ public class crud {
                     deletarProfessor();
                     break;
                 case 5:
-                    return; // Retorna ao menu principal
+                    return;
                 default:
                     System.out.println("Opção inválida. Por favor, escolha uma opção de 1 a 5.");
                     break;
@@ -294,7 +294,7 @@ public class crud {
     private static void atualizarProfessor() {
         System.out.print("Informe o ID do professor a ser atualizado: ");
         int id = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine();
         
         System.out.print("Novo nome do professor: ");
         String nome = scanner.nextLine();
@@ -334,7 +334,7 @@ public class crud {
     private static void deletarProfessor() {
         System.out.print("Informe o ID do professor a ser excluído: ");
         int id = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine();
     
         String sql = "DELETE FROM professores WHERE idProfessor = ?";
         try {
@@ -370,7 +370,7 @@ public class crud {
             System.out.println("5. Voltar ao Menu Principal");
             System.out.print("Escolha uma opção: ");
             int opcao = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
     
             switch (opcao) {
                 case 1:
@@ -386,7 +386,7 @@ public class crud {
                     deletarCurso();
                     break;
                 case 5:
-                    return; // Retorna ao menu principal
+                    return;
                 default:
                     System.out.println("Opção inválida. Por favor, escolha uma opção de 1 a 5.");
                     break;
@@ -458,7 +458,7 @@ public class crud {
     private static void atualizarCurso() {
         System.out.print("Informe o ID do curso a ser atualizado: ");
         int idCurso = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine();
         
         System.out.print("Novo nome do curso: ");
         String nomeCurso = scanner.nextLine();
@@ -498,7 +498,7 @@ public class crud {
     private static void deletarCurso() {
         System.out.print("Informe o ID do curso a ser excluído: ");
         int idCurso = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine();
     
         String sql = "DELETE FROM cursos WHERE idCurso = ?";
         try {
@@ -523,14 +523,4 @@ public class crud {
             }
         }
     }
-                
-    
-
-    // Os métodos listarAlunos, atualizarAluno e deletarAluno devem ser implementados de forma similar
-    // seguindo o padrão mostrado em inserirAluno, ajustando as queries SQL e a lógica conforme necessário para cada operação.
-
-    // Métodos para professorCrud, inserirProfessor, listarProfessores, atualizarProfessor, e deletarProfessor seguiriam uma lógica similar.
-
-    // Métodos para cursoCrud, inserirCurso, listarCursos, atualizarCurso, e deletarCurso também seguiriam uma lógica similar.
-
 }
