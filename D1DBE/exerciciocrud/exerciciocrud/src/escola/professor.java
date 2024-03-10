@@ -1,7 +1,5 @@
 package escola;
 
-import java.sql.Date;
-
 public class professor {
   private int idProfessor;
   private String nomeProfessor;

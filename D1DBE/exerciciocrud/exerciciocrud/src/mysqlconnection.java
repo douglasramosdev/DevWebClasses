@@ -8,7 +8,6 @@ public class mysqlconnection {
 
   private Connection dbConn = null;
   private Statement sqlupdt = null;
-  private ResultSet sqlslct = null;
 
   public void OpenDatabase () {
     try {
@@ -36,5 +35,8 @@ public class mysqlconnection {
   }
   public PreparedStatement getPreparedStatement(String sql) throws SQLException {
     return dbConn.prepareStatement(sql);
+}
+public Connection getDbConn() {
+  return this.dbConn;
 }
 }
