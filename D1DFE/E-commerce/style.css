@@ -1,5 +1,8 @@
 body{
-  font-family: Arial;
+  font-family: 'Roboto', sans-serif;
+}
+h1, h2, h3{
+  font-family: 'Titillium_Web', sans-serif;
 }
 table{
   border-collapse: separate;
@@ -8,6 +11,20 @@ table{
 td{
   border:none;
   padding: 5px;
+}
+h2{
+  width: auto;
+  height: 20px;
+  border-top-style: solid;
+  padding: 20px;
+  background-color: rgba(59, 61, 61, 0.082);
+}
+#tracking{
+  width: auto;
+  height: 40px;
+  border-radius: 10px;
+  border-color: green;
+  color: green;
 }
 .modal{
   display: none;
