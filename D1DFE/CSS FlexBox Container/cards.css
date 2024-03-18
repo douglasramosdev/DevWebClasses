@@ -1,0 +1,32 @@
+.container{
+  position: absolute;
+  top: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+  height: 500px;
+  align-content: space-around;
+  justify-content: space-around;
+}
+.cards{
+  width: 150px;
+  height: 375px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  align-items: center;
+}
+h2, p{
+  text-align: center;
+}
+
+.pics{
+  width: 150px;
+  height: 150px;
+}
+.botoes{  
+  width: 100px;
+  height: 50px;
+  background-color: grey;
+  color: white;
+  text-align: center;
+  border: none;
+}
