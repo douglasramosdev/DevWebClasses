@@ -1,0 +1,125 @@
+
+body{
+	margin: 0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+}
+
+p {
+	font-size: 14px;
+	color: #222
+}
+
+strong {
+	color: #000;
+}
+
+h1 {
+	font-size: 18px;
+	margin: 2px 0;
+}
+
+.big{
+	font-size: 18px;
+	margin: 2px 0;
+}
+
+.small{
+	font-size: 10px;
+	margin: 2px 0;
+}
+
+
+.container{
+	max-width: 1000px;
+	margin: 0 auto;
+	display: flex;
+	gap: 20px;
+	padding: 40px;
+	height: 100vh;
+}
+
+.images{
+	max-width: 550px;
+}
+
+.image-full {
+	width: 100%;
+	height: auto;
+}
+
+.thumbnail-images{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 16px;
+	gap: 20px;
+}
+
+button {
+	color: #000;
+	border: none;
+	padding: 1rem 2.5rem;
+	border-radius: 4px;
+	cursor: pointer;
+	font-weight: 700;
+}
+
+.purchase{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 15px;
+	margin: 25px 0;
+}
+
+@media (min-width: 700px) and (max-width: 999px) {
+  button {
+		width: 100%;
+	}
+
+	.images{
+		max-width: 409px;
+	}
+
+	.purchase {
+		flex-direction: column;
+    align-items: flex-start;
+	}
+
+	.container{
+		padding: 40px 20px;
+	}
+
+	.thumbnail-images{
+		gap: 2px;
+	}
+}
+
+@media (min-width: 0px) and (max-width: 699px) {
+  button {
+		width: 100%;
+		color: #000;
+	}
+
+	.purchase {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.container {
+		flex-direction: column;
+	}
+
+	.thumbnail-images{
+		display: none;
+	}
+
+	.image-full{
+		width: 100%;
+	}
+
+	.big{
+		text-align: center;
+	}
+}
