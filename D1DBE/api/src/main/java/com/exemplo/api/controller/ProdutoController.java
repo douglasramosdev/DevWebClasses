@@ -38,16 +38,6 @@ public class ProdutoController {
             this.quantidade = quantidade;
         }
 
-        @Override
-        public String toString() {
-            return "Produto{" +
-                    "id=" + id +
-                    ", nome='" + nome + '\'' +
-                    ", categoria='" + categoria + '\'' +
-                    ", preco=" + preco +
-                    ", quantidade=" + quantidade +
-                    '}';
-        }
 
         public int getId() {
             return id;
@@ -87,6 +77,16 @@ public class ProdutoController {
 
         public void setQuantidade(int quantidade) {
             this.quantidade = quantidade;
+        }
+        @Override
+        public String toString() {
+            return "Produto{" +
+                    "id=" + id +
+                    ", nome='" + nome + '\'' +
+                    ", categoria='" + categoria + '\'' +
+                    ", preco=" + preco +
+                    ", quantidade=" + quantidade +
+                    '}';
         }
     }
 }

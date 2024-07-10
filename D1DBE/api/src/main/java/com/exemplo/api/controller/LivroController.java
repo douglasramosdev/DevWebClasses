@@ -38,16 +38,6 @@ public class LivroController {
             this.paginas = paginas;
         }
 
-        @Override
-        public String toString() {
-            return "Livro{" +
-                    "id=" + id +
-                    ", titulo='" + titulo + '\'' +
-                    ", autor='" + autor + '\'' +
-                    ", editora='" + editora + '\'' +
-                    ", paginas=" + paginas +
-                    '}';
-        }
 
         public int getId() {
             return id;
@@ -87,6 +77,16 @@ public class LivroController {
 
         public void setPaginas(int paginas) {
             this.paginas = paginas;
+        }
+        @Override
+        public String toString() {
+            return "Livro{" +
+                    "id=" + id +
+                    ", titulo='" + titulo + '\'' +
+                    ", autor='" + autor + '\'' +
+                    ", editora='" + editora + '\'' +
+                    ", paginas=" + paginas +
+                    '}';
         }
     }
 }

@@ -38,16 +38,6 @@ public class PedidoController {
             this.total = total;
         }
 
-        @Override
-        public String toString() {
-            return "Pedido{" +
-                    "id=" + id +
-                    ", cliente='" + cliente + '\'' +
-                    ", produto='" + produto + '\'' +
-                    ", quantidade=" + quantidade +
-                    ", total=" + total +
-                    '}';
-        }
 
         public int getId() {
             return id;
@@ -87,6 +77,16 @@ public class PedidoController {
 
         public void setTotal(double total) {
             this.total = total;
+        }
+        @Override
+        public String toString() {
+            return "Pedido{" +
+                    "id=" + id +
+                    ", cliente='" + cliente + '\'' +
+                    ", produto='" + produto + '\'' +
+                    ", quantidade=" + quantidade +
+                    ", total=" + total +
+                    '}';
         }
     }
 }

@@ -38,16 +38,6 @@ public class ClienteController {
             this.endereco = endereco;
         }
 
-        @Override
-        public String toString() {
-            return "Cliente{" +
-                    "id=" + id +
-                    ", nome='" + nome + '\'' +
-                    ", email='" + email + '\'' +
-                    ", telefone='" + telefone + '\'' +
-                    ", endereco='" + endereco + '\'' +
-                    '}';
-        }
 
         public int getId() {
             return id;
@@ -87,6 +77,16 @@ public class ClienteController {
 
         public void setEndereco(String endereco) {
             this.endereco = endereco;
+        }
+        @Override
+        public String toString() {
+            return "Cliente{" +
+                    "id=" + id +
+                    ", nome='" + nome + '\'' +
+                    ", email='" + email + '\'' +
+                    ", telefone='" + telefone + '\'' +
+                    ", endereco='" + endereco + '\'' +
+                    '}';
         }
     }
 }

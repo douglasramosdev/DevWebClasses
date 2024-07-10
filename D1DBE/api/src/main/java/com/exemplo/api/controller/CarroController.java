@@ -38,16 +38,6 @@ public class CarroController {
             this.preco = preco;
         }
 
-        @Override
-        public String toString() {
-            return "Carro{" +
-                    "id=" + id +
-                    ", modelo='" + modelo + '\'' +
-                    ", marca='" + marca + '\'' +
-                    ", ano=" + ano +
-                    ", preco=" + preco +
-                    '}';
-        }
 
         public int getId() {
             return id;
@@ -87,6 +77,16 @@ public class CarroController {
 
         public void setPreco(double preco) {
             this.preco = preco;
+        }
+        @Override
+        public String toString() {
+            return "Carro{" +
+                    "id=" + id +
+                    ", modelo='" + modelo + '\'' +
+                    ", marca='" + marca + '\'' +
+                    ", ano=" + ano +
+                    ", preco=" + preco +
+                    '}';
         }
     }
 }
