@@ -1,89 +1,88 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mysql = require('mysql2');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
 
-const produtos = [
-    { id: 1, nome: "Produto A", categoria: "Categoria 1", preco: 100.00, estoque: 50 },
-    { id: 2, nome: "Produto B", categoria: "Categoria 2", preco: 200.00, estoque: 30 },
-    { id: 3, nome: "Produto C", categoria: "Categoria 3", preco: 300.00, estoque: 20 }
-];
+// Configuração da conexão com o banco de dados
+const db = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password:"0000",
+    database:"dbTeste"
+});
 
-const livros = [
-    { id: 1, titulo: "Livro A", autor: "Autor 1", ano: 2001, paginas: 300 },
-    { id: 2, titulo: "Livro B", autor: "Autor 2", ano: 2002, paginas: 350 },
-    { id: 3, titulo: "Livro C", autor: "Autor 3", ano: 2003, paginas: 400 }
-];
+// Conectar ao banco de dados
+db.connect((err) => {
+    if (err) {
+        console.error('Erro ao conectar ao banco de dados:', err);
+        return;
+    }
+    console.log('Conectado ao banco de dados MySQL');
+});
 
-const clientes = [
-    { id: 1, nome: "Cliente A", email: "clienteA@example.com", idade: 30, cidade: "Cidade 1" },
-    { id: 2, nome: "Cliente B", email: "clienteB@example.com", idade: 40, cidade: "Cidade 2" },
-    { id: 3, nome: "Cliente C", email: "clienteC@example.com", idade: 50, cidade: "Cidade 3" }
-];
+app.get('/', (req, res) => {
+    res.send('API Node.js com Express e MySQL');
+});
 
-const carros = [
-    { id: 1, modelo: "Carro A", marca: "Marca 1", ano: 2020, preco: 30000 },
-    { id: 2, modelo: "Carro B", marca: "Marca 2", ano: 2021, preco: 40000 },
-    { id: 3, modelo: "Carro C", marca: "Marca 3", ano: 2022, preco: 50000 }
-];
-
-const pedidos = [
-    { id: 1, cliente: "Cliente A", produto: "Produto A", quantidade: 2, total: 200.00 },
-    { id: 2, cliente: "Cliente B", produto: "Produto B", quantidade: 1, total: 200.00 },
-    { id: 3, cliente: "Cliente C", produto: "Produto C", quantidade: 3, total: 900.00 }
-];
-
+// Endpoints de produtos
 app.get('/produtos', (req, res) => {
-    res.json(produtos);
+    const query = 'SELECT * FROM produtos';
+    db.query(query, (err, results) => {
+        if (err) {
+            console.error('Erro ao buscar produtos:', err);
+            res.status(500).send('Erro ao buscar produtos');
+            return;
+        }
+        res.json(results);
+    });
 });
 
 app.post('/produtos', (req, res) => {
-    console.log("Recebendo requisição POST com dados do produto:");
-    console.log(req.body);
-    res.status(201).send();
+    const { nome, categoria, preco, estoque } = req.body;
+    const query = 'INSERT INTO produtos (nome, categoria, preco, estoque) VALUES (?, ?, ?, ?)';
+    db.query(query, [nome, categoria, preco, estoque], (err, results) => {
+        if (err) {
+            console.error('Erro ao inserir produto:', err);
+            res.status(500).send('Erro ao inserir produto');
+            return;
+        }
+        console.log('Produto inserido:', req.body);
+        res.status(201).send('Produto inserido');
+    });
 });
 
+
 app.get('/livros', (req, res) => {
-    res.json(livros);
+    const query = 'SELECT * FROM livros';
+    db.query(query, (err, results) => {
+        if (err) {
+            console.error('Erro ao buscar livros:', err);
+            res.status(500).send('Erro ao buscar livros');
+            return;
+        }
+        res.json(results);
+    });
 });
 
 app.post('/livros', (req, res) => {
-    console.log("Recebendo requisição POST com dados do livro:");
-    console.log(req.body);
-    res.status(201).send();
-});
-
-app.get('/clientes', (req, res) => {
-    res.json(clientes);
-});
-
-app.post('/clientes', (req, res) => {
-    console.log("Recebendo requisição POST com dados do cliente:");
-    console.log(req.body);
-    res.status(201).send();
-});
-
-app.get('/carros', (req, res) => {
-    res.json(carros);
-});
-
-app.post('/carros', (req, res) => {
-    console.log("Recebendo requisição POST com dados do carro:");
-    console.log(req.body);
-    res.status(201).send();
-});
-
-app.get('/pedidos', (req, res) => {
-    res.json(pedidos);
-});
-
-app.post('/pedidos', (req, res) => {
-    console.log("Recebendo requisição POST com dados do pedido:");
-    console.log(req.body);
-    res.status(201).send();
+    const { titulo, autor, ano, paginas } = req.body;
+    const query = 'INSERT INTO livros (titulo, autor, ano, paginas) VALUES (?, ?, ?, ?)';
+    db.query(query, [titulo, autor, ano, paginas], (err, results) => {
+        if (err) {
+            console.error('Erro ao inserir livro:', err);
+            res.status(500).send('Erro ao inserir livro');
+            return;
+        }
+        console.log('Livro inserido:', req.body);
+        res.status(201).send('Livro inserido');
+    });
 });
 
 app.listen(port, () => {
