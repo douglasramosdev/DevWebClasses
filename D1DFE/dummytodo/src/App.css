@@ -1,11 +1,14 @@
+/* App.css */
+
+/* Estilos base do Gameboy Color */
 body {
-  background-color: #9bbc0f;
+  background-color: #9bbc0f; /* Verde típico do Gameboy Color */
   color: #0f380f;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', cursive; /* Fonte pixelada do Gameboy */
 }
 
 .container {
-  background-color: #a4b0ae; 
+  background-color: #a4b0ae; /* Cor de fundo da tela do Gameboy */
   border: 2px solid #000;
   border-radius: 10px;
   padding: 20px;
@@ -17,12 +20,13 @@ h1 {
   color: #000;
 }
 
+/* Lista de tarefas */
 .list-group {
   padding: 0;
 }
 
 .list-group-item {
-  background-color: #d0d0d0;
+  background-color: #d0d0d0; /* Cor do bloco de tarefas */
   color: #000;
   border: 2px solid #000;
   border-radius: 8px;
@@ -34,7 +38,7 @@ h1 {
 }
 
 button {
-  background-color: #6db34f;
+  background-color: #6db34f; /* Verde dos botões do Gameboy */
   border: none;
   color: #fff;
   padding: 5px 10px;
@@ -44,28 +48,14 @@ button {
 }
 
 button:hover {
-  background-color: #4a8a29; 
-}
-
-.btn-primary {
-  background-color: #006400;
-}
-
-.btn-primary:hover {
-  background-color: #004d00; 
-}
-
-.btn-danger {
-  background-color: #d9534f; 
-}
-
-.btn-danger:hover {
-  background-color: #c9302c; 
+  background-color: #4a8a29; /* Cor ao passar o mouse */
 }
 
 .completed {
-  background-color: #a0d7a7;
+  background-color: #a0d7a7; /* Verde claro para tarefas completas */
 }
+
+/* Adicionar a linha através do texto das tarefas completas */
 .completed span {
   text-decoration: line-through;
 }
