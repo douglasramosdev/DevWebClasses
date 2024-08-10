@@ -13,6 +13,8 @@ app.use(bodyParser.json()); // Para interpretar requisições com corpo em JSON
 // Importar e usar rotas
 app.use('/api/users', require('./routes/users'));
 app.use('/api/products', require('./routes/products'));
+app.use('/api/order', require('./routes/ordersRoutes'));
+app.use('/api/catergory', require('./routes/categoriesRoutes'));
 
 // Teste da Conexão com o banco de dados SQL
 sequelize.authenticate()

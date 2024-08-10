@@ -1,0 +1,114 @@
+/* Estilos principais */
+.app {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px;
+  margin-left: 5px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li button {
+  background-color: #dc3545;
+  padding: 5px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+li button:hover {
+  background-color: #c82333;
+}
+
+/* Breakpoints Responsivos */
+
+/* Dispositivos pequenos (smartphones em modo retrato) */
+@media (max-width: 576px) {
+  .app {
+    width: 100%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  input {
+    width: 90%;
+  }
+
+  button {
+    width: 45px;
+    padding: 8px;
+    margin-left: 5px;
+  }
+}
+
+/* Dispositivos médios (tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .app {
+    width: 350px;
+    margin: 30px auto;
+    padding: 20px;
+  }
+
+  input {
+    width: 85%;
+  }
+
+  button {
+    width: 50px;
+    padding: 10px;
+  }
+}
+
+/* Dispositivos grandes (desktops e maiores) */
+@media (min-width: 769px) {
+  .app {
+    width: 400px;
+    margin: 40px auto;
+    padding: 25px;
+  }
+
+  input {
+    width: 80%;
+  }
+
+  button {
+    width: 60px;
+    padding: 10px;
+  }
+}
