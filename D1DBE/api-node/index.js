@@ -10,7 +10,6 @@ const port = 3000;
 
 app.use(bodyParser.json());
 
-// Configuração da conexão com o banco de dados
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -18,7 +17,6 @@ const db = mysql.createConnection({
     database:"dbTeste"
 });
 
-// Conectar ao banco de dados
 db.connect((err) => {
     if (err) {
         console.error('Erro ao conectar ao banco de dados:', err);
@@ -31,7 +29,6 @@ app.get('/', (req, res) => {
     res.send('API Node.js com Express e MySQL');
 });
 
-// Endpoints de produtos
 app.get('/produtos', (req, res) => {
     const query = 'SELECT * FROM produtos';
     db.query(query, (err, results) => {
